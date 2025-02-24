@@ -3,9 +3,12 @@ from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 
 engine = create_engine('sqlite:///users.db', echo=False)
+Session = sessionmaker(bind=engine)
+session = Session()
 Base = declarative_base()
 
 class User(Base):
@@ -13,7 +16,7 @@ class User(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    full_name = Column(String)
+    fullname = Column(String)
     nickname = Column(String)
 
     def __repr__(self):
