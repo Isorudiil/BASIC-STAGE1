@@ -16,11 +16,11 @@ class User(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    fullname = Column(String)
+    full_name = Column(String)
     nickname = Column(String)
 
     def __repr__(self):
-        return f'<User(name={self.name}, fullname={self.full_name}, nickname={self.nickname})>'
+        return f'<User(name={self.name}, full_name={self.full_name}, nickname={self.nickname})>'
     
 
 if __name__ == '__main__':
